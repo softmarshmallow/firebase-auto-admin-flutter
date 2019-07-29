@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "442751619562",
+    "firebase_url": "https://fb-auto-ui-admin.firebaseio.com",
+    "project_id": "fb-auto-ui-admin",
+    "storage_bucket": "fb-auto-ui-admin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442751619562:android:f598a050dc249db6",
+        "android_client_info": {
+          "package_name": "design.bridged.firebase_auto_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442751619562-3a6q8kecnivhmuma5mvuu5ru7d17th14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqXEknJUaTYf02O3nBJLJZRvdyC7RdfS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442751619562-3a6q8kecnivhmuma5mvuu5ru7d17th14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

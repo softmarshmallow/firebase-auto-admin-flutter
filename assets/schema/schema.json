@@ -1,0 +1,46 @@
+[
+  {
+    "model": "movie",
+    "firestore-path": "movies",
+    "data-schema": {
+      "name": {
+        "data-type": "string",
+        "world-type": "title"
+      },
+      "photos": {
+        "data-type": "string array",
+        "world-type": "visual-media"
+      },
+      "rate": {
+        "data-type": "number",
+        "word-type": "rate"
+      },
+      "date": {
+        "data-type": "timestamp",
+        "world-type": "date"
+      }
+    },
+    "ui-schema": {
+      "name": {
+        "meta": false,
+        "hidden": false,
+        "editable": false
+      },
+      "photos": {
+        "meta": false,
+        "hidden": false,
+        "editable": false
+      },
+      "rate": {
+        "meta": false,
+        "hidden": false,
+        "editable": false
+      },
+      "date": {
+        "meta": false,
+        "hidden": false,
+        "editable": false
+      }
+    }
+  }
+]
