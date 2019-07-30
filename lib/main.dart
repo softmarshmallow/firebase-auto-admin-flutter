@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'screens/collection_screen.dart';
+import 'screens/schema_select_screen.dart';
+import 'utils/schema_reader.dart';
 
-class MyApp extends StatelessWidget {
+void main() => runApp(AutoUiApp());
+
+class AutoUiApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SchemaSelectScreen(),
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,7 +28,6 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

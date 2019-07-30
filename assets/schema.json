@@ -1,0 +1,57 @@
+{
+  "project": "firebase auto ui official example",
+  "models": [
+    {
+      "model": "movie",
+      "firestore-path": "movies",
+      "data-schema": [
+        {
+          "field": "title",
+          "data-type": "string",
+          "world-type": "title"
+        },
+        {
+          "field": "photos",
+          "data-type": "string array",
+          "world-type": "visual-media"
+        },
+        {
+          "field": "rate",
+          "data-type": "number",
+          "word-type": "rate"
+        },
+        {
+          "field": "date",
+          "data-type": "timestamp",
+          "world-type": "date"
+        }
+      ],
+      "ui-schema": [
+        {
+          "field": "title",
+          "meta": false,
+          "hidden": false,
+          "editable": false
+        },
+        {
+          "field": "photos",
+          "meta": false,
+          "hidden": false,
+          "editable": false
+        },
+        {
+          "field": "rate",
+          "meta": false,
+          "hidden": false,
+          "editable": false
+        },
+        {
+          "field": "date",
+          "meta": false,
+          "hidden": false,
+          "editable": false
+        }
+      ]
+    }
+  ]
+}
