@@ -2,11 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auto_admin/models/schema.dart';
 import 'package:flutter/material.dart';
 
-class CollectionScreen extends StatefulWidget {
-  CollectionScreen(this.model);
-
+class ScreenArguments {
   final String model;
-  Schema schema;
+
+  ScreenArguments(this.model);
+}
+
+class CollectionScreen extends StatefulWidget {
+  static const routeName = '/collection';
 
   @override
   State<StatefulWidget> createState() => _CollectionScreen();
@@ -15,9 +18,11 @@ class CollectionScreen extends StatefulWidget {
 class _CollectionScreen extends State<CollectionScreen> {
   @override
   Widget build(BuildContext context) {
+    final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.model),
+        title: Text(args.model),
       ),
       body: DocumentList(),
       floatingActionButton: FloatingActionButton(

@@ -12,9 +12,10 @@ class AutoUiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/',
+      initialRoute: '/schema',
       routes: {
-        '/': (context) => SchemaSelectScreen(),
+        '/schema': (context) => SchemaSelectScreen(),
+        CollectionScreen.routeName: (context) => CollectionScreen()
       },
       theme: ThemeData(
         // This is the theme of your application.

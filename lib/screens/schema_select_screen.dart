@@ -4,6 +4,8 @@ import 'package:firebase_auto_admin/models/schema.dart';
 import 'package:firebase_auto_admin/utils/schema_reader.dart';
 import 'package:flutter/material.dart';
 
+import 'collection_screen.dart';
+
 class SchemaSelectScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _SchemaSelectScreen();
@@ -43,7 +45,16 @@ class _SchemaSelectScreen extends State<SchemaSelectScreen> {
             title: Text(item.modelName),
             subtitle: Text(item.firestorePath),
             trailing: IconButton(
-                icon: Icon(Icons.keyboard_arrow_right), onPressed: null),
+                icon: Icon(Icons.keyboard_arrow_right),
+                onPressed: () => {
+                      Navigator.pushNamed(
+                        context,
+                        CollectionScreen.routeName,
+                        arguments: ScreenArguments(
+                          item.modelName,
+                        ),
+                      )
+                    }),
           );
         });
   }
