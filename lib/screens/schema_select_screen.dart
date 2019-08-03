@@ -29,15 +29,22 @@ class _SchemaSelectScreen extends State<SchemaSelectScreen> {
             case ConnectionState.waiting:
               return new Text('Loading...');
             default:
-              return new ListView(
-                children: snapshot.data.map((Schema document) {
-                  return new ListTile(
-                    title: new Text(document.modelName),
-                    subtitle: new Text(document.firestorePath),
-                  );
-                }).toList(),
-              );
+              return _buildSchemaListView(snapshot.data);
           }
+        });
+  }
+
+  ListView _buildSchemaListView(items) {
+    return new ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (BuildContext context, int index) {
+          Schema item = items[index];
+          return new ListTile(
+            title: Text(item.modelName),
+            subtitle: Text(item.firestorePath),
+            trailing: IconButton(
+                icon: Icon(Icons.keyboard_arrow_right), onPressed: null),
+          );
         });
   }
 }
