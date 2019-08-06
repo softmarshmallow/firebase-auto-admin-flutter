@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/collection_screen.dart';
+import 'screens/document_screen.dart';
 import 'screens/schema_select_screen.dart';
 import 'utils/schema_reader.dart';
 
@@ -12,10 +13,11 @@ class AutoUiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/schema',
+      initialRoute: '/',
       routes: {
-        '/schema': (context) => SchemaSelectScreen(),
-        CollectionScreen.routeName: (context) => CollectionScreen()
+        '/': (context) => SchemaSelectScreen(),
+        CollectionScreen.routeName: (context) => CollectionScreen(),
+        DocumentScreen.routeName: (context) => DocumentScreen(),
       },
       theme: ThemeData(
         // This is the theme of your application.
@@ -27,7 +29,7 @@ class AutoUiApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
     );
   }

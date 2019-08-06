@@ -12,7 +12,7 @@
         },
         {
           "field": "photos",
-          "data-type": "string array",
+          "data-type": "[string]",
           "world-type": "visual-media"
         },
         {
@@ -47,6 +47,25 @@
         },
         {
           "field": "date",
+          "meta": false,
+          "hidden": false,
+          "editable": false
+        }
+      ]
+    },
+    {
+      "model": "actor",
+      "firestore-path": "actors",
+      "data-schema": [
+        {
+          "field": "name",
+          "data-type": "string",
+          "world-type": "name"
+        }
+      ],
+      "ui-schema": [
+        {
+          "field": "name",
           "meta": false,
           "hidden": false,
           "editable": false

@@ -42,20 +42,18 @@ class _SchemaSelectScreen extends State<SchemaSelectScreen> {
         itemBuilder: (BuildContext context, int index) {
           Schema item = items[index];
           return new ListTile(
-            title: Text(item.modelName),
-            subtitle: Text(item.firestorePath),
-            trailing: IconButton(
-                icon: Icon(Icons.keyboard_arrow_right),
-                onPressed: () => {
-                      Navigator.pushNamed(
-                        context,
-                        CollectionScreen.routeName,
-                        arguments: ScreenArguments(
-                          item.modelName,
-                        ),
-                      )
-                    }),
-          );
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  CollectionScreen.routeName,
+                  arguments: ScreenArguments(
+                    item,
+                  ),
+                );
+              },
+              title: Text(item.modelName),
+              subtitle: Text(item.firestorePath),
+              trailing: Icon(Icons.keyboard_arrow_right));
         });
   }
 }

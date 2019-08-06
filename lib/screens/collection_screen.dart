@@ -2,10 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auto_admin/models/schema.dart';
 import 'package:flutter/material.dart';
 
-class ScreenArguments {
-  final String model;
+import 'document_screen.dart' as doc_screen;
 
-  ScreenArguments(this.model);
+class ScreenArguments {
+  final Schema schema;
+
+  ScreenArguments(this.schema);
 }
 
 class CollectionScreen extends StatefulWidget {
@@ -22,22 +24,20 @@ class _CollectionScreen extends State<CollectionScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(args.model),
+        title: Text(args.schema.modelName),
       ),
-      body: DocumentList(),
+      body: buildDocumentList(args),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {},
         child: Icon(Icons.add),
       ),
     );
   }
-}
 
-class DocumentList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  Widget buildDocumentList(ScreenArguments args) {
     return StreamBuilder<QuerySnapshot>(
-      stream: Firestore.instance.collection('movies').snapshots(),
+      stream:
+          Firestore.instance.collection(args.schema.firestorePath).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
         switch (snapshot.connectionState) {
@@ -48,6 +48,14 @@ class DocumentList extends StatelessWidget {
               children:
                   snapshot.data.documents.map((DocumentSnapshot document) {
                 return new ListTile(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      doc_screen.DocumentScreen.routeName,
+                      arguments: doc_screen.ScreenArguments(
+                        args.schema.modelName,
+                      ),
+                    );
+                  },
                   title: new Text(document['title']),
                   subtitle: new Text(document['rate'].toString()),
                 );
