@@ -42,7 +42,7 @@ class _CollectionScreen extends State<CollectionScreen> {
         if (snapshot.hasError) return new Text('Error: ${snapshot.error}');
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return new Text('Loading...');
+            return new LinearProgressIndicator();
           default:
             return new ListView(
               children:
