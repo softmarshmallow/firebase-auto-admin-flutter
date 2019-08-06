@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name=".App"
-        android:label="firebase_auto_admin"
+        android:label="Auto Admin"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -51,9 +51,8 @@ class _CollectionScreen extends State<CollectionScreen> {
                   onTap: () {
                     Navigator.of(context).pushNamed(
                       doc_screen.DocumentScreen.routeName,
-                      arguments: doc_screen.ScreenArguments(
-                        args.schema.modelName,
-                      ),
+                      arguments:
+                          doc_screen.ScreenArguments(args.schema, document),
                     );
                   },
                   title: new Text(document['title']),
